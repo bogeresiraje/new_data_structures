@@ -38,7 +38,7 @@ export default function Container({ children }) {
                 {/* br-sideleft-menu */}
             </div>
 
-            <div className="br-header">
+            <div className="br-header" style={{zIndex: -20}}>
                 <div className="br-header-left">
                     <div className="navicon-left hidden-md-down"><a id="btnLeftMenu" href="/"><i className="icon ion-navicon-round" /></a></div>
                     <div className="navicon-left hidden-lg-up"><a id="btnLeftMenuMobile" href="/"><i className="icon ion-navicon-round" /></a></div>
