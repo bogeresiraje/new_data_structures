@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Factorial from "./components/question_1/Factorial";
+import Finobacci from "./components/question_1/Finobacci";
+import TowerOfHanoi from "./components/question_1/TowerOfHanoi";
+import Queue from "./components/question_2/Queue";
+import Stack from "./components/question_2/Stack";
+import LinkedList from './components/question_2/LinkedList';
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+	return (
+    <BrowserRouter>
+		<Switch>
+			<Route exact path="/" component={Factorial}/>
+			<Route path="/finobacci" component={Finobacci}/>
+			<Route path="/tower_of_hanoi" component={TowerOfHanoi}/>
+			<Route path="/stack" component={Stack}/>
+			<Route path="/queue" component={Queue}/>
+			<Route path="/linked_list" component={LinkedList}/>
+		</Switch>
+	</BrowserRouter>
   );
 }
 
