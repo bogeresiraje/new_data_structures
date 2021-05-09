@@ -34,17 +34,24 @@ export default function Container({ children }) {
                         <li className="nav-item"><a href="/queue" className="nav-link">Queue</a></li>
                         <li className="nav-item"><a href="/linked_list" className="nav-link">Linked List</a></li>
                     </ul>
+
+                    <a href="/group_members" className="br-menu-link">
+                        <div className="br-menu-item">
+                            <i className="menu-item-icon icon ion-ios-home-outline tx-22" />
+                            <span className="menu-item-label">Group Members</span>
+                        </div>{/* menu-item */}
+                    </a>
+
                 </div>
                 {/* br-sideleft-menu */}
             </div>
 
-            <div className="br-header" style={{zIndex: -20}}>
+            <div className="br-header">
                 <div className="br-header-left">
                     <div className="navicon-left hidden-md-down"><a id="btnLeftMenu" href="/"><i className="icon ion-navicon-round" /></a></div>
                     <div className="navicon-left hidden-lg-up"><a id="btnLeftMenuMobile" href="/"><i className="icon ion-navicon-round" /></a></div>
                 </div>{/* br-header-left */}
             </div>
-
 
             {children}
 

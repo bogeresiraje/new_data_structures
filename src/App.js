@@ -6,6 +6,7 @@ import TowerOfHanoi from "./components/question_1/TowerOfHanoi";
 import Queue from "./components/question_2/Queue";
 import Stack from "./components/question_2/Stack";
 import LinkedList from './components/question_2/LinkedList';
+import GroupMembers from './components/common/GroupMembers';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
 					<Route path="/stack" component={Stack} />
 					<Route path="/queue" component={Queue} />
 					<Route path="/linked_list" component={LinkedList} />
+					<Route path="/group_members" component={GroupMembers} />
 				</Switch>
 			</ToastProvider>
 		</BrowserRouter>
