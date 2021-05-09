@@ -1,40 +1,8 @@
 
-// import React from 'react';
-// import Container from '../common/Container';
-
-
-// export default function TowerOfHanoi() {
-//     return (
-//         <Container>
-//             <div className="br-mainpanel">
-//                 <div className="pd-30">
-//                     <h4 className="tx-gray-800 mg-b-5">Tower of Hanoi</h4>
-//                 </div>{/* d-flex */}
-//                 <div className="br-pagebody mg-t-5 pd-x-30">
-//                     <div className="row row-sm mg-t-20">
-//                         <div className="col-12">
-//                             <div className="card pd-0 bd-0 shadow-base">
-//                                 <div className="pd-x-30 pd-t-30 pd-b-15">
-//                                     <div className="d-flex align-items-center justify-content-between">
-//                                     </div>{/* d-flex */}
-//                                 </div>
-//                                 <div className="pd-x-15 pd-b-15">
-//                                 </div>
-//                             </div>{/* card */}
-//                         </div>{/* col-9 */}
-//                     </div>{/* row */}
-//                 </div>{/* br-pagebody */}
-//             </div>
-//         </Container>
-//     );
-// }
-
-
 import React, { Component } from "react";
 import Layout from "../common/constants/Layout";
+import Container from "../common/Container";
 import Setting from "../common/game/Setting";
-import Footer from '../common/layout/Footer';
-import Header from '../common/layout/Header';
 import DescriptionModal from '../common/util/modals/DescriptionModal';
 import ResultsModal from '../common/util/modals/ResultsModal';
 
@@ -172,34 +140,48 @@ class TowerOfHanoi extends Component {
     render() {
         const { towers, numMovesPlayed, showDescription, showResults } = this.state;
         return (
-            <div style={layoutStyle}>
-                <DescriptionModal
-                    showDescription={showDescription}
-                    toggleDescription={this.handleToggleDescriptionModal}
-                    afterOpenModal={this.handleAfterOpenModal}
-                    requestCloseModal={this.handleRequestCloseModal}
-                />
-                {this.gameIsWon() && <ResultsModal
-                    showResults={showResults}
-                    toggleResults={this.handleToggleResultsModal}
-                    afterOpenModal={this.handleAfterOpenModal}
-                    requestCloseModal={this.handleRequestCloseModal}
-                />}
-                <Header />
-                <Setting
-                    towers={towers}
-                    numMovesPlayed={numMovesPlayed}
-                    showDescription={showDescription}
-                    showResults={showResults}
-                    toggleResults={this.handleToggleResultsModal}
-                    removeDisk={this.removeDisk}
-                    insertDisk={this.insertDisk}
-                    isValidMove={this.isValidMove}
-                    isOnTop={this.isOnTop}
-                    gameIsWon={this.gameIsWon}
-                />
-                <Footer />
-            </div>
+            <Container>
+                <div className="br-mainpanel">
+                    <div className="pd-30">
+                        <h4 className="tx-gray-800 mg-b-5">Tower of Hanoi</h4>
+                    </div>{/* d-flex */}
+                    <div className="br-pagebody mg-t-5 pd-x-30">
+                        <div className="row row-sm mg-t-20">
+                            <div className="col-12">
+                                <div className="card pd-0 bd-0 shadow-base">
+                                    <div style={layoutStyle}>
+                                        <DescriptionModal
+                                            showDescription={showDescription}
+                                            toggleDescription={this.handleToggleDescriptionModal}
+                                            afterOpenModal={this.handleAfterOpenModal}
+                                            requestCloseModal={this.handleRequestCloseModal}
+                                        />
+                                        {this.gameIsWon() && <ResultsModal
+                                            showResults={showResults}
+                                            toggleResults={this.handleToggleResultsModal}
+                                            afterOpenModal={this.handleAfterOpenModal}
+                                            requestCloseModal={this.handleRequestCloseModal}
+                                        />}
+
+                                        <Setting
+                                            towers={towers}
+                                            numMovesPlayed={numMovesPlayed}
+                                            showDescription={showDescription}
+                                            showResults={showResults}
+                                            toggleResults={this.handleToggleResultsModal}
+                                            removeDisk={this.removeDisk}
+                                            insertDisk={this.insertDisk}
+                                            isValidMove={this.isValidMove}
+                                            isOnTop={this.isOnTop}
+                                            gameIsWon={this.gameIsWon}
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </Container>
         );
     }
 }
